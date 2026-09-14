@@ -1,0 +1,14 @@
+﻿torch
+torchvision
+torchaudio
+opencv-python
+numpy
+ultralytics
+scikit-image
+paddleocr
+paddlepaddle
+pandas
+streamlit
+pillow
+protobuf<=3.20.3
+flask
