@@ -1,4 +1,4 @@
-﻿import os
+import os
 import cv2
 import numpy as np
 from pipeline import LicensePlateEnhancer
@@ -62,15 +62,19 @@ def create_dashboard(orig_path, res_path, results_info, out_path):
         ec = cv2.imread(r['enhanced_crop'])
         
         if oc is not None:
-            och = int(oc.shape[0] * (200 / oc.shape[1]))
-            ocr = cv2.resize(oc, (200, och))
-            canvas[current_y : current_y+och, margin : margin+200] = ocr
+            # Scale to fit max width 200 and max height 140
+            scale = min(200 / oc.shape[1], 140 / oc.shape[0])
+            ocw, och = int(oc.shape[1] * scale), int(oc.shape[0] * scale)
+            ocr = cv2.resize(oc, (ocw, och))
+            canvas[current_y : current_y+och, margin : margin+ocw] = ocr
             cv2.putText(canvas, "Original Crop", (margin, current_y + och + 20), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (150,150,150), 1)
             
         if ec is not None:
-            ech = int(ec.shape[0] * (350 / ec.shape[1]))
-            ecr = cv2.resize(ec, (350, ech))
-            canvas[current_y : current_y+ech, margin + 250 : margin + 600] = ecr
+            # Scale to fit max width 350 and max height 140
+            scale = min(350 / ec.shape[1], 140 / ec.shape[0])
+            ecw, ech = int(ec.shape[1] * scale), int(ec.shape[0] * scale)
+            ecr = cv2.resize(ec, (ecw, ech))
+            canvas[current_y : current_y+ech, margin + 250 : margin + 250 + ecw] = ecr
             cv2.putText(canvas, "Enhanced Crop", (margin + 250, current_y + ech + 20), cv2.FONT_HERSHEY_SIMPLEX, 0.6, (150,150,150), 1)
             
         # Text details
