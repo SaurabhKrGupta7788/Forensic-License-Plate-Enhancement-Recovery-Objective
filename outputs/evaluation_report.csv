@@ -1,4 +1,0 @@
-filename,plate_id,text,confidence,psnr,ssim,original_crop,enhanced_crop
-car-wbs-DL6CM6683_00001.jpg,0,OCR_UNAVAILABLE,0.0,19.042925147701013,0.8002017694931719,D:\CerebralZip_ Assignment 2\outputs\car-wbs-DL6CM6683_00001.jpg_plate_0_original.jpg,D:\CerebralZip_ Assignment 2\outputs\car-wbs-DL6CM6683_00001.jpg_plate_0_enhanced.jpg
-car-wbs-GJ05JH2501_00001.jpg,0,OCR_UNAVAILABLE,0.0,16.00204596285814,0.7558342044955737,D:\CerebralZip_ Assignment 2\outputs\car-wbs-GJ05JH2501_00001.jpg_plate_0_original.jpg,D:\CerebralZip_ Assignment 2\outputs\car-wbs-GJ05JH2501_00001.jpg_plate_0_enhanced.jpg
-car-wbs-TN21AT0480_00001.jpg,0,OCR_UNAVAILABLE,0.0,23.892151675342227,0.8959555427638086,D:\CerebralZip_ Assignment 2\outputs\car-wbs-TN21AT0480_00001.jpg_plate_0_original.jpg,D:\CerebralZip_ Assignment 2\outputs\car-wbs-TN21AT0480_00001.jpg_plate_0_enhanced.jpg

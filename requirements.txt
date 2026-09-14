@@ -1,4 +1,4 @@
-﻿torch
+torch
 torchvision
 torchaudio
 opencv-python
@@ -11,4 +11,3 @@ pandas
 streamlit
 pillow
 protobuf<=3.20.3
-flask

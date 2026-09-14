@@ -21,23 +21,12 @@ This repository contains a full forensic-style image and video enhancement pipel
    - `plate_yolov8s.pt` (Plate detection)
    - `nafnet.pth` (Deblurring weights)
 
-## How to Run the Application
-
-This project provides two fully featured UI options.
-
-### Option 1: Streamlit (Recommended)
+### How to Run the Application (Streamlit)
 To run the primary Streamlit interface with Web Camera and Image Upload support, run the provided batch script to bypass protobuf issues:
 ```bash
 .\run_streamlit.bat
 ```
 *(Or manually set `$env:PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION="python"` and run `streamlit run app.py`)*
-
-### Option 2: Flask
-If you prefer a lightweight Flask server:
-```bash
-python flask_app.py
-```
-Then open `http://127.0.0.1:5000` in your browser.
 
 ## Generating Final Sample Outputs
 To automatically process a folder of test images (like the 5 required cases) and generate before/after comparisons:
