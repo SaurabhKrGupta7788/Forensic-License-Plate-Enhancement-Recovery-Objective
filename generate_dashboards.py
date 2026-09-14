@@ -94,13 +94,17 @@ for filename in os.listdir(input_dir):
     img_path = os.path.join(input_dir, filename)
     print(f"Processing {filename}...")
     
-    # 1. Process image using the pipeline
-    results, out_image_path = enhancer.process_image(img_path, output_dir)
+    # 1. Process image using the pipeline (mimic Streamlit's JPG encoding to ensure identical YOLO confidence scores)
+    temp_img = cv2.imread(img_path)
+    temp_path = os.path.join(output_dir, "temp_dash_processing.jpg")
+    cv2.imwrite(temp_path, temp_img)
+    
+    results, out_image_path = enhancer.process_image(temp_path, output_dir)
     
     if out_image_path:
         # 2. Create the unified dashboard image
         dash_path = os.path.join(output_dir, f"Dashboard_{filename}.jpg")
-        create_dashboard(img_path, out_image_path, results, dash_path)
+        create_dashboard(temp_path, out_image_path, results, dash_path)
         print(f"Created Dashboard: {dash_path}")
 
 print("All dashboards generated successfully!")
